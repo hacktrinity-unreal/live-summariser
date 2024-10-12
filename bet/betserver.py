@@ -1,7 +1,7 @@
 from aiohttp import web
 import json
 from bet import Bet
-PATH = "bet.json"
+PATH = "bets.json"
 
 
 CORS_HEADERS = {
