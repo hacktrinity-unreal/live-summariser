@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import { useSearchParams } from "react-router-dom";
 import "./index.css";
@@ -85,11 +85,40 @@ function LiveCase() {
   );
 }
 
-function CaseTitles({ title, description, guiltyOdds = 1, notGuiltyOdds = 1 }) {
+async function fetchOdds() {
+  try {
+    const response = await fetch("http://0.0.0.0:8080/get_returns");
+    const data = await response.json();
+    const { guilty, not_guilty } = data;
+    return { guiltyOdds: guilty, notGuiltyOdds: not_guilty };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { guiltyOdds: null, notGuiltyOdds: null };
+  }
+}
+
+function CaseTitles({ title, description }) {
+  const [guiltyOdds, setGuiltyOdds] = useState(0.0);
+  const [notGuiltyOdds, setNotGuiltyOdds] = useState(0.0);
+
+  useEffect(() => {
+    const getOdds = async () => {
+      try {
+        const { guiltyOdds, notGuiltyOdds } = await fetchOdds();
+        setGuiltyOdds(guiltyOdds);
+        setNotGuiltyOdds(notGuiltyOdds);
+      } catch (error) {
+        console.error("Error fetching odds:", error);
+      }
+    };
+
+    getOdds();
+  }, []);
+
   return (
     <>
       <div className="case-title-container">
-        <div className="not-buttons">
+        <div>
           <h1 className="case-title-text">{title}</h1>
           <p className="case-title-description">{description}</p>
         </div>
@@ -137,7 +166,7 @@ function KeyMomentContainer({ summaries }) {
 function AIExpert({ analyses }) {
   const [showOpinionAI, setShowOpinionAI] = useState(false);
   const handleButtonClick = () => {
-    setShowOpinionAI(true); // Toggle the state
+    setShowOpinionAI(true);
   };
   return (
     <div className=" ai-expert-container">
