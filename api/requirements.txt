@@ -1,6 +1,9 @@
 blinker==1.8.2
 click==8.1.7
+eventlet==0.37.0
 Flask==3.0.3
+flask-cors==5.0.0
+Flask-SocketIO==5.4.1
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==3.0.1
