@@ -15,7 +15,7 @@ code {
 .container {
   top: 20%; /* Center vertically */
   height: 70%; /* Set height to 70% */
-  background-color: #f9f9f9; /* Light background for better visibility */
+  /* background-color: #f9f9f9; Light background for better visibility */
   border: 1px solid #ccc; /* Optional: Add border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   padding: 20px; /* Padding inside the container */
@@ -45,6 +45,56 @@ code {
   left: 10%; /* Align to the left with some space */
 }
 
+hr {
+  border: none;
+  border-top: 2px dotted gray;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 90%;
+}
+
+/* Description styling */
+.desc {
+  font-size: 0.9rem; /* Smaller font size for the description */
+  color: #666; /* Medium gray for the description text */
+  margin: 10px 0; /* Space above and below the description */
+  max-height: 60px; /* Limit height to keep the layout clean */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  display: -webkit-box; /* For webkit browsers */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+}
+.key-moment {
+  width: 90%;
+  /* border: 3px black; */
+  background-color: white;
+  /* border: 2px solid rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+  margin-left:3%;
+  padding: 13px;
+}
+
+.key-moment-timestamp {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  font-style: italic;
+  text-align: left;
+  padding: 5px;
+  /* border: 1px solid #ccc; Light gray border */
+  border-radius: 15;
+}
+
+.case-title-container {
+  position: fixed;
+  top: 5%;
+  left: 10%;
+}
+
+.case-title-subtitle {
+  font-style: italic;
+}
 
 .case-title-container {
   display: flex;
@@ -209,38 +259,3 @@ code {
   color: #333; /* Dark text for status */
 }
 
-/* Description styling */
-.desc {
-  font-size: 0.9rem; /* Smaller font size for the description */
-  color: #666; /* Medium gray for the description text */
-  margin: 10px 0; /* Space above and below the description */
-  max-height: 60px; /* Limit height to keep the layout clean */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-  display: -webkit-box; /* For webkit browsers */
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical; /* Vertical orientation for the box */
-}
-.key-moment {
-  width: 500px;
-  border: 3px black;
-  background-color: white;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 13px;
-}
-
-.key-moment-timestamp {
-  text-align: right;
-  display: block;
-}
-
-.case-title-container {
-  position: fixed;
-  top: 5%;
-  left: 10%;
-}
-
-.case-title-subtitle {
-  font-style: italic;
-}

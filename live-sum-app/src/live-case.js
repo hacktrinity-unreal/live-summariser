@@ -64,15 +64,17 @@ function CaseTitles({title, description, guiltyOdds=1, notGuiltyOdds=1}) {
     );
 }
 
-function KeyMoment(title, text, timestamp) {
+function KeyMoment( title, text, timestamp) {
   return (
     <>
       <div className="key-moment">
-        <h1 className="key-moment-title">{title}</h1>
+      <i className="key-moment-timestamp">{timestamp}</i>
         <p className="key-moment-text">{text}</p>
-        <i className="key-moment-timestamp">{timestamp}</i>
+        
       </div>
+      
       <br></br>
+      <hr></hr>
     </>
   );
 }
@@ -81,7 +83,7 @@ function KeyMomentContainer() {
     let keyMoments = [];
 
     for (let i = 0; i < 10; i++) {
-        keyMoments.push(new KeyMoment("Title", "Description", "Timestamp"))
+        keyMoments.push(new KeyMoment("Title", "Description is something. I'm testing how the padding works and what happens when there would be an overflow. I think it wraps up quite nicely ", "10:45 - 10 sec ago"))
     }
 
     return (
