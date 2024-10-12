@@ -180,34 +180,7 @@ hr {
 
 }
 
-.double-buttons {
-  position: absolute;
-  left: 64%; 
-  top: 6%;
-  display: flex;
-  gap: 10px; /* Space between the buttons */
-}
-.green-button:hover , .red-button:hover {
-  transform: scale(1.02); /* Scale up on hover for a subtle effect */
-}
-.green-button, .red-button {
-  
-  width: 175px; /* Set a fixed width for both buttons */
-  height: 80px; /* Set a fixed height for both buttons */
-  font-size: 18px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.green-button {
-  background-color: rgba(13, 149, 30, 0.8)
-}
 
-.red-button {
-  background-color: rgba(196, 10, 45, 0.8)
-}
 
 .opinion-container {
   /* Container for the opinion AI and the title */
@@ -324,3 +297,90 @@ hr {
   color: #333; /* Dark text for status */
 }
 
+
+.double-buttons {
+  position: absolute;
+  left: 64%; 
+  top: 6%;
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+.green-button:hover , .red-button:hover {
+  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+}
+.green-button, .red-button {
+  
+  width: 175px; /* Set a fixed width for both buttons */
+  height: 80px; /* Set a fixed height for both buttons */
+  font-size: 18px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* .green-button {
+  background-color: rgba(13, 149, 30, 0.8)
+}
+
+.red-button {
+  background-color: rgba(196, 10, 45, 0.8)
+} */
+
+.green-button{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.green-button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.red-button {
+  background-color: #ffcccc; /* Light red background */
+  border-radius: 100px;
+  box-shadow: rgba(255, 99, 71, .2) 0 -25px 18px -14px inset, /* Tomato color */
+              rgba(255, 99, 71, .15) 0 1px 2px, 
+              rgba(255, 99, 71, .15) 0 2px 4px, 
+              rgba(255, 99, 71, .15) 0 4px 8px, 
+              rgba(255, 99, 71, .15) 0 8px 16px, 
+              rgba(255, 99, 71, .15) 0 16px 32px;
+  color: #a00; /* Dark red text color */
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.red-button:hover {
+  box-shadow: rgba(255, 99, 71, .35) 0 -25px 18px -14px inset, /* Tomato color on hover */
+              rgba(255, 99, 71, .25) 0 1px 2px, 
+              rgba(255, 99, 71, .25) 0 2px 4px, 
+              rgba(255, 99, 71, .25) 0 4px 8px, 
+              rgba(255, 99, 71, .25) 0 8px 16px, 
+              rgba(255, 99, 71, .25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
