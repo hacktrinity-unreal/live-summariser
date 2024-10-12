@@ -1,22 +1,25 @@
-import moviepy.editor as mp
+from typing import Generator
 import speech_recognition as sr
+from pydub import AudioSegment
+
+from utils import make_temp_directory
+
+CHUNK_SIZE = 60000  # milliseconds
 
 
-def speech_to_text(video_path: str) -> str:
-    video = mp.VideoFileClip(video_path)
-    audio = video.audio
+def speech_to_text(audio_path: str) -> Generator[str, None, None]:
+    audio = AudioSegment.from_wav(audio_path)
+    num_chunks = len(audio) // CHUNK_SIZE + (1 if len(audio) % CHUNK_SIZE > 0 else 0)
 
-    path = f"{_strip_extension(video_path)}.wav"
-    audio.write_audiofile(path)
-    text = _recognise_text(path)
-    return text
+    with make_temp_directory() as td:
+        for i in range(num_chunks):
+            start_time = i * CHUNK_SIZE
+            end_time = start_time + CHUNK_SIZE
+            chunk = audio[start_time:end_time]
+            chunk_filename = f"{td}/chunk_{i}.wav"
+            chunk.export(chunk_filename, format="wav")
 
-
-def _strip_extension(file_path: str) -> str:
-    parts = file_path.split(".")
-    if len(parts) > 1:
-        return ".".join(parts[:-1])
-    return file_path
+            yield _recognise_text(chunk_filename)
 
 
 def _recognise_text(audio_path: str) -> str:
