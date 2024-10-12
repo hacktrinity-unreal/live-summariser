@@ -1,21 +1,21 @@
 import React,{ useState }  from 'react';
 import './index.css'; // Import the CSS file
 
-function LiveCase ({title}) {
+function LiveCase({title}) {
     return (
         <div>
-            <CaseTitle title={title}/>
+            <CaseTitle title={title} />
             <KeyMomentContainer />
             <AIExpert />
         </div>
     );
-};
+}
 
-function CaseTitle(title) {
+function CaseTitle({title}) {
     return (
         <div className="case-title-container">
             <h1 className="case-title-text">
-            Case Title
+                {title}
             </h1>
         </div>
     );
