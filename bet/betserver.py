@@ -1,7 +1,7 @@
 from aiohttp import web
 import json
 from bet import Bet
-PATH = "bet.json"
+PATH = "bets.json"
 async def handle_add_bet(request):
     data = await request.json()
     bet = Bet(PATH)
@@ -22,6 +22,7 @@ async def handle_add_bet(request):
 
 async def handle_get_returns(request):
     bet = Bet(PATH)
+    print("hello")
     response = json.dumps({
         "guilty":1.5,
         "not_guilty":1.4
