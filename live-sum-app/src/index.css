@@ -11,11 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.case-title-description{
+  margin-top: 1%;
+  text-transform: none;
+  font-size:20px;
+  font-weight: normal;
+  font-style: italic; 
+  color:#999; letter-spacing:-0.005em; word-spacing:1px;
+  letter-spacing:none;
+}
+.case-title-text {
+  margin-top: 10%;
+  font-size: 40px;
+  font-weight: 700; color:#202020;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px;
+}
+
 
 .container {
   top: 20%; /* Center vertically */
   height: 70%; /* Set height to 70% */
-  background-color: #f9f9f9; /* Light background for better visibility */
+  /* background-color: #f9f9f9; Light background for better visibility */
   border: 1px solid #ccc; /* Optional: Add border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   padding: 20px; /* Padding inside the container */
@@ -35,6 +52,11 @@ code {
   position: fixed;
   width: 30%; /* Set width to 20% */
   right: 10%; /* Align to the right with some space */
+  top: 20%; /* Center vertically */
+  height: 70%; /* Set height to 70% */
+  padding: 20px; /* Padding inside the container */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Align items in a column */
 }
 
 .key-moment-container {
@@ -45,6 +67,101 @@ code {
   left: 10%; /* Align to the left with some space */
 }
 
+hr {
+  border: none;
+  border-top: 2px dotted gray;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 90%;
+}
+
+/* Description styling */
+.desc {
+  font-size: 0.9rem; /* Smaller font size for the description */
+  color: #666; /* Medium gray for the description text */
+  margin: 10px 0; /* Space above and below the description */
+  max-height: 60px; /* Limit height to keep the layout clean */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  display: -webkit-box; /* For webkit browsers */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+}
+.key-moment {
+  width: 90%;
+  /* border: 3px black; */
+  background-color: white;
+  /* border: 2px solid rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+  margin-left:3%;
+  padding: 13px;
+}
+
+
+.opinion-button-ai {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.opinion-button-ai:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.opinion-button-ai:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.opinion-button-ai:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.key-moment-timestamp {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  font-style: italic;
+  text-align: left;
+  padding: 5px;
+  /* border: 1px solid #ccc; Light gray border */
+  border-radius: 15;
+}
+
+.case-title-container {
+  position: fixed;
+  top: 5%;
+  left: 10%;
+}
+
+.case-title-subtitle {
+  font-style: italic;
+}
 
 .case-title-container {
   display: flex;
@@ -62,37 +179,8 @@ code {
   margin-left: 0%;
 
 }
-.case-title-text {
-  margin: 0;
-}
-.double-buttons {
-  position: absolute;
-  left: 64%; 
-  top: 6%;
-  display: flex;
-  gap: 10px; /* Space between the buttons */
-}
-.green-button:hover , .red-button:hover {
-  transform: scale(1.02); /* Scale up on hover for a subtle effect */
-}
-.green-button, .red-button {
-  
-  width: 175px; /* Set a fixed width for both buttons */
-  height: 80px; /* Set a fixed height for both buttons */
-  font-size: 18px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.green-button {
-  background-color: rgba(13, 149, 30, 0.8)
-}
 
-.red-button {
-  background-color: rgba(196, 10, 45, 0.8)
-}
+
 
 .opinion-container {
   /* Container for the opinion AI and the title */
@@ -209,38 +297,90 @@ code {
   color: #333; /* Dark text for status */
 }
 
-/* Description styling */
-.desc {
-  font-size: 0.9rem; /* Smaller font size for the description */
-  color: #666; /* Medium gray for the description text */
-  margin: 10px 0; /* Space above and below the description */
-  max-height: 60px; /* Limit height to keep the layout clean */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-  display: -webkit-box; /* For webkit browsers */
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+
+.double-buttons {
+  position: absolute;
+  left: 64%; 
+  top: 6%;
+  display: flex;
+  gap: 10px; /* Space between the buttons */
 }
-.key-moment {
-  width: 500px;
-  border: 3px black;
-  background-color: white;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 13px;
+.green-button:hover , .red-button:hover {
+  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+}
+.green-button, .red-button {
+  
+  width: 175px; /* Set a fixed width for both buttons */
+  height: 80px; /* Set a fixed height for both buttons */
+  font-size: 18px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* .green-button {
+  background-color: rgba(13, 149, 30, 0.8)
 }
 
-.key-moment-timestamp {
-  text-align: right;
-  display: block;
+.red-button {
+  background-color: rgba(196, 10, 45, 0.8)
+} */
+
+.green-button{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.case-title-container {
-  position: fixed;
-  top: 5%;
-  left: 10%;
+.green-button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
 
-.case-title-subtitle {
-  font-style: italic;
+.red-button {
+  background-color: #ffcccc; /* Light red background */
+  border-radius: 100px;
+  box-shadow: rgba(255, 99, 71, .2) 0 -25px 18px -14px inset, /* Tomato color */
+              rgba(255, 99, 71, .15) 0 1px 2px, 
+              rgba(255, 99, 71, .15) 0 2px 4px, 
+              rgba(255, 99, 71, .15) 0 4px 8px, 
+              rgba(255, 99, 71, .15) 0 8px 16px, 
+              rgba(255, 99, 71, .15) 0 16px 32px;
+  color: #a00; /* Dark red text color */
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.red-button:hover {
+  box-shadow: rgba(255, 99, 71, .35) 0 -25px 18px -14px inset, /* Tomato color on hover */
+              rgba(255, 99, 71, .25) 0 1px 2px, 
+              rgba(255, 99, 71, .25) 0 2px 4px, 
+              rgba(255, 99, 71, .25) 0 4px 8px, 
+              rgba(255, 99, 71, .25) 0 8px 16px, 
+              rgba(255, 99, 71, .25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
