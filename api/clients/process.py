@@ -8,7 +8,7 @@ import os
 import tiktoken
 
 from .llm import client
-from .stt import *
+from .stt import speech_to_text
 
 # os.system("sh /home/fedora/prog/live-summariser/.env")
 YOUR_API_KEY="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"
@@ -21,6 +21,25 @@ SUMMARY_PATH = "./summary.txt"
 #     pass
 # with open(SUMMARY_PATH, "w") as f:
 #     pass
+
+
+def process(audio_path: str) -> None:
+    text_chunks = speech_to_text(audio_path)
+
+    outputs, summaries = [], []
+    text_response = None
+    for chunk in text_chunks:
+        print("Hello")
+        text_response = summarize_chunk(chunk, text_response)
+        print(text_response)
+        with open(SUMMARY_PATH, "a") as f:
+            f.write(text_response)
+        outputs.append(text_response)
+        lawyer_comment = comment_on_summaries(outputs)
+        with open(COMMENTS_PATH, "a") as f:
+            f.write(lawyer_comment)
+
+        summaries.append(lawyer_comment)
 
 
 
