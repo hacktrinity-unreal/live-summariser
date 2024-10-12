@@ -5,7 +5,10 @@ from bet import Bet
 PATH = "bets.json"
 
 
-CORS_HEADERS = {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*"}
+CORS_HEADERS = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*",
+}
 
 
 async def handle_add_bet(request):
