@@ -1,21 +1,21 @@
 import React,{ useState }  from 'react';
 import './index.css'; // Import the CSS file
 
-const App = () => {
+function LiveCase({title}) {
     return (
         <div>
-            <CaseTitle />
+            <CaseTitle title={title} />
             <KeyMomentContainer />
             <AIExpert />
         </div>
     );
-};
+}
 
-function CaseTitle(title) {
+function CaseTitle({title}) {
     return (
         <div className="case-title-container">
             <h1 className="case-title-text">
-            Case Title
+                {title}
             </h1>
         </div>
     );
@@ -70,4 +70,4 @@ function OpinionAI(){
     )
 }
 
-export default App;
+export default LiveCase;
