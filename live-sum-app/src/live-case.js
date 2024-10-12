@@ -167,15 +167,23 @@ function KeyMomentContainer({ summaries }) {
 }
 
 function AIExpert({ analyses }) {
+  const [index, setIndex] = React.useState(0);
   const [showOpinionAI, setShowOpinionAI] = useState(false);
+
   const handleButtonClick = () => {
     setShowOpinionAI(true);
+    setIndex(0);
   };
+
+  React.useEffect(() => {
+    setIndex((previous) => previous + 1);
+  }, [analyses]);
+
   return (
     <div className=" ai-expert-container">
       <div className="general-sub-container">
         {analyses && showOpinionAI && (
-          <OpinionAI content={analyses[0].content} />
+          <OpinionAI content={analyses[index].content} />
         )}
       </div>
 
