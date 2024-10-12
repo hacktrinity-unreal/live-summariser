@@ -114,6 +114,7 @@ hr {
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono",monospace;
+  flex-shrink: 0;
   height: 48px;
   justify-content: center;
   line-height: 1;
