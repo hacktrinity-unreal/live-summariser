@@ -1,12 +1,27 @@
 from aiohttp import web
 import json
-
+from bet import Bet
+PATH = "bet.json"
 async def handle_add_bet(request):
-    request.Response
+    data = await request.json()
+    bet = Bet(PATH)
     
-    return web.Response(status=200)
+    print(data)
+
+    stake = data['stake'] if 'stake' in data else 1
+    position = data['position'] if 'position' in data else 'guilty'
+    bet.add(stake,position)
+    bet.save_to(PATH)
+
+    
+    response_data = {
+            'status': 'success',
+            'received': data
+        }
+    return web.json_response(response_data)
 
 async def handle_get_returns(request):
+    bet = Bet(PATH)
     response = json.dumps({
         "guilty":1.5,
         "not_guilty":1.4
