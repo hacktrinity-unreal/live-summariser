@@ -1,6 +1,11 @@
+import json
 class Bet:
-    def __init__(self):
+    def __init__(self,path=None):
         self.bets = []
+
+        if path:
+            with open(path,"r") as f:
+                self.bets = json.loads(f.read())
 
     def get_odds(self):
 
@@ -35,3 +40,10 @@ class Bet:
             total_guilty += bet["guilty_payout"]
             total_not_guilty += bet["not_guilty_payout"]
         return total_guilty, total_not_guilty
+    
+    def save_to(self,path):
+        with open(path,"w") as f:
+            f.write(json.dumps(self.bets))
+    
+
+

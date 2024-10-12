@@ -11,5 +11,16 @@ class TestBet(unittest.TestCase):
             bet.add_bet(x[1],x[0])
         self.assertEqual(sum(bet.get_odds()),1)
 
+    def test_save(self):
+        bet = Bet()
+        
+        for x in [(["guilty","not_guilty"][random.randint(0,1)],random.randint(1,100)) for _ in range(100)]:
+            bet.add_bet(x[1],x[0])
+        
+        bet.save_to("bets.json")
+
+        bet2 = Bet(path="bets.json")
+        self.assertEqual(bet.bets,bet2.bets)
+
 if __name__ == "__main__":
     unittest.main()
