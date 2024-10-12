@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
+import ReactMarkdown from "react-markdown";
 import { useSearchParams } from "react-router-dom";
 import "./index.css";
 
@@ -140,7 +141,9 @@ function KeyMoment({ text, timestamp }) {
     <>
       <div className="key-moment">
         <i className="key-moment-timestamp">{timeAgo(timestamp)}</i>
-        <p className="key-moment-text">{text}</p>
+        <p className="key-moment-text">
+          <ReactMarkdown>{text}</ReactMarkdown>
+        </p>
       </div>
 
       <br></br>
@@ -190,7 +193,9 @@ function AIExpert({ analyses }) {
 function OpinionAI({ content }) {
   return (
     <div className="sub-container">
-      <p>{content}</p>
+      <p>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </p>
     </div>
   );
 }
