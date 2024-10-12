@@ -22,13 +22,13 @@ async def handle_add_bet(request):
 
 async def handle_get_returns(request):
     bet = Bet(PATH)
-    print("hello")
-    response = json.dumps({
+
+    
+    return web.json_response({
         "guilty":1.5,
         "not_guilty":1.4
 
     })
-    return web.json_response(body=response)
 
 
 
