@@ -12,13 +12,13 @@ async def handle_get_returns(request):
         "not_guilty":1.4
 
     })
-    return web.Response(body=response)
+    return web.json_response(body=response)
 
 
 
 app = web.Application()
 #position is either "guilty" or "not_guilty"
-app.add_routes([web.post('/bet/{amount}/{position}', handle_add_bet),
+app.add_routes([web.get('/bet/{amount}/{position}', handle_add_bet),
                 web.get('/get_returns', handle_get_returns)])
 
 if __name__ == '__main__':
