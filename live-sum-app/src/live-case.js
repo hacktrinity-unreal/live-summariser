@@ -106,7 +106,7 @@ function CaseTitles({ title, description, guiltyOdds = 1, notGuiltyOdds = 1 }) {
   );
 }
 
-function KeyMoment({ title, text, timestamp }) {
+function KeyMoment({ text, timestamp }) {
   return (
     <>
       <div className="key-moment">
@@ -125,7 +125,6 @@ function KeyMomentContainer({ summaries }) {
     <div className="container key-moment-container">
       {summaries.map((summary) => (
         <KeyMoment
-          title=""
           text={summary.content}
           timestamp={summary.timestamp}
           key={summary.timestamp}
@@ -137,32 +136,32 @@ function KeyMomentContainer({ summaries }) {
 
 function AIExpert({ analyses }) {
   const [showOpinionAI, setShowOpinionAI] = useState(false);
-
   const handleButtonClick = () => {
-    analyses && setShowOpinionAI(true);
+    setShowOpinionAI(true); // Toggle the state
   };
-
-  console.log(analyses);
-
   return (
-    <div className="container ai-expert-container">
+    <div className=" ai-expert-container">
       <div className="general-sub-container">
-        <h1>AI Expert</h1>
-        {showOpinionAI && <OpinionAI analysis={analyses.at(0)} />}
+        {analyses && showOpinionAI && (
+          <OpinionAI content={analyses[0].content} />
+        )}
       </div>
 
-      <button onClick={handleButtonClick} className="opinion-button">
+      <button
+        onClick={handleButtonClick}
+        className="opinion-button-ai"
+        disabled={!analyses.length}
+      >
         Give AI opinion
       </button>
     </div>
   );
 }
 
-function OpinionAI({ analysis }) {
-  console.log(analysis);
+function OpinionAI({ content }) {
   return (
     <div className="sub-container">
-      <p>{analysis.content}</p>
+      <p>{content}</p>
     </div>
   );
 }
