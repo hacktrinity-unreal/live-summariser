@@ -3,3 +3,6 @@
 **/.vscode
 **/.idea
 **/*.mp4
+
+bet/__pycache__/
+bet/bets.json
