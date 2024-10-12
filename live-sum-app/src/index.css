@@ -49,6 +49,7 @@ code {
 }
 
 .ai-expert-container {
+  overflow: auto;
   position: fixed;
   width: 30%; /* Set width to 20% */
   right: 10%; /* Align to the right with some space */
