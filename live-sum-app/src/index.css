@@ -52,3 +52,90 @@ code {
 .opinion-button:hover {
   background-color: #0056b3; /* Darker shade on hover */
 }
+
+
+/* Overall body style */
+.wholeBody {
+  background-color: #f8f9fa; /* Soft light background */
+  min-height: 100vh; /* Full height of the viewport */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 20px; /* Add padding around the container */
+}
+
+/* Header style */
+.headerCase {
+  text-align: center; /* Center the text */
+  margin: 20px 0; /* Space above and below the header */
+  padding: 20px; /* Padding above and below the header text */
+}
+
+.headerCase h1 {
+  font-size: 4rem; /* Increased font size for the title */
+  color: #333333; /* Dark gray for the text */
+  font-family: 'Georgia', serif; /* Elegant serif font */
+  font-weight: bold; /* Bold weight for the title */
+  margin: 0; /* Remove default margin */
+  text-transform: uppercase; /* Transform text to uppercase for classiness */
+  letter-spacing: 2px; /* Increased spacing between letters */
+}
+
+/* Case list styling */
+.case-list {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center the items horizontally */
+  gap: 20px; /* Increased space between items */
+  padding: 10px; /* Padding around the grid */
+}
+
+/* Individual case styling */
+.case {
+  position: relative; /* Position relative to allow absolute positioning of children */
+  border: 1px solid #ccc; /* Border around each case */
+  border-radius: 10px; /* Rounded corners for the case */
+  padding: 10px; /* Padding for each case */
+  text-align: center;
+  width: 250px; /* Width for each case */
+  height: 350px; /* Fixed height for each case */
+  cursor: pointer; /* Makes the div look clickable */
+  overflow: hidden; /* Hide overflow to keep the layout clean */
+  background-color: #ffffff; /* White background for the case */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.case:hover {
+  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+}
+
+/* Thumbnail image styling */
+.case-thumbnail {
+  width: 100%; /* Full width of the parent */
+  height: 150px; /* Fixed height for the images */
+  object-fit: cover; /* Ensures the image covers the space without distortion */
+  border-radius: 8px; /* Rounded corners for the thumbnail */
+}
+
+/* Status badge styling */
+.status {
+  position: absolute; /* Position absolutely within the .case */
+  top: 10px; /* 10px from the top */
+  right: 10px; /* 10px from the right */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners for the status badge */
+  font-weight: bold; /* Make status bold */
+  color: #333; /* Dark text for status */
+}.desc {
+  font-size: 0.9rem; /* Smaller font size for the description */
+  color: #666; /* Medium gray for the description text */
+  margin: 10px 0; /* Space above and below the description */
+  max-height: 60px; /* Limit height to keep the layout clean */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  display: -webkit-box; /* For webkit browsers */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+}
