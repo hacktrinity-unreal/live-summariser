@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ai-expert-container {
+  position: fixed; /* Make the container fixed on the screen */
+  top: 15%; /* Center vertically */
+  right: 10%; /* Align to the right with some space */
+  width: 20%; /* Set width to 20% */
+  height: 70%; /* Set height to 70% */
+  background-color: #f9f9f9; /* Light background for better visibility */
+  border: 1px solid #ccc; /* Optional: Add border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  padding: 20px; /* Padding inside the container */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Align items in a column */
+}
+
+.opinion-container {
+  /* Container for the opinion AI and the title */
+}
+
+.opinion-ai-box {
+  margin-top: 10px; /* Optional: Add some space below the title */
+  padding: 10px;
+  border: 1px solid #007BFF; /* Border for the opinion box */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #e9f7fe; /* Light blue background for the opinion box */
+}
+
+.opinion-button {
+  background-color: #007BFF; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 15px; /* Button padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth background change */
+  margin-top: auto; /* Push the button to the bottom */
+  align-self: center; /* Optional: Center the button horizontally */
+}
+
+.opinion-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
