@@ -12,9 +12,8 @@ code {
     monospace;
 }
 
-.sub-container {
-  position: fixed; /* Make the container fixed on the screen */
-  top: 15%; /* Center vertically */
+.container {
+  top: 20%; /* Center vertically */
   height: 70%; /* Set height to 70% */
   background-color: #f9f9f9; /* Light background for better visibility */
   border: 1px solid #ccc; /* Optional: Add border */
@@ -24,21 +23,25 @@ code {
   flex-direction: column; /* Align items in a column */
 }
 
-.general-container {
+.sub-container {
   margin-top: 10px; /* Optional: Add some space below the title */
   padding: 10px;
-  border: 1px solid #007BFF; /* Border for the opinion box */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Border for the opinion box */
   border-radius: 5px; /* Rounded corners */
-  background-color: #e9f7fe; /* Light blue background for the opinion box */
+  background-color: white; /* Light blue background for the opinion box */
 }
 
 .ai-expert-container {
-  width: 20%; /* Set width to 20% */
+  position: fixed;
+  width: 30%; /* Set width to 20% */
   right: 10%; /* Align to the right with some space */
 }
 
 .key-moment-container {
-  width: 50%;
+  position: fixed;
+  overflow-y: auto;
+  max-height: 80vh;
+  width: 40%;
   left: 10%; /* Align to the left with some space */
 }
 
@@ -65,7 +68,7 @@ code {
 .key-moment {
   width: 500px;
   border: 3px black;
-  background-color: floralwhite;
+  background-color: white;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 13px;
@@ -82,6 +85,6 @@ code {
   left: 10%;
 }
 
-.case-title-text {
-
+.case-title-subtitle {
+  font-style: italic;
 }
