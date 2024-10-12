@@ -4,7 +4,7 @@
 // }
 
 // export default App;
-import { BrowserRouter as  useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 //import React,{ useState }  from 'react';
 import './index.css'; // Import the CSS file
 import court1 from './court1.jpg';
@@ -66,13 +66,6 @@ function getNonMaxRankIds(cases) {
     // Step 4: Return up to 4 IDs
     return nonMaxIds.slice(0, 4);
 }
-//
-// key={singleCase.id}
-//                     id={singleCase.id}
-//                     title={singleCase.title}
-//                     thumbnail={singleCase.thumbnail}
-//                     description = {singleCase.description}
-//                     live={singleCase.live}
 // The Home Page
 function Home (){
     const maxId = getMaxRankId(cases);
@@ -135,12 +128,14 @@ function Home (){
 
 // Each thumbnail + info of a case
 function Case({id, title, thumbnail, description, live}){
-    
-    // somehow navigate ?
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`/live-case?id=${id}&title=${title}&description=${description}`);
+    };
    
     return (
-        <div className="case"  >
-            <img src={thumbnail}  className="case-thumbnail" />
+        <div className="case" onClick={handleClick}  >
+            <img src={thumbnail}  className="case-thumbnail" alt ={title}/>
             <h2>{title}</h2>
             <div className= 'desc'>{description}</div>
             <div className='status'>{live? 'Live':'Upcoming'}</div>

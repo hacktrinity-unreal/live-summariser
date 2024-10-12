@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { io } from "socket.io-client";
+import { useSearchParams} from "react-router-dom"
 import "./index.css";
 
-function LiveCase({ title, subtitle }) {
+function LiveCase() {
   React.useEffect(() => {
     const socket = io("http://localhost:8000", {
       transports: ["websocket"],
@@ -27,23 +28,28 @@ function LiveCase({ title, subtitle }) {
     };
   }, []);
 
+  const [searchParams] = useSearchParams();
+
+  const id = searchParams.get('id');
+  const title = searchParams.get('title');
+  const description = searchParams.get('description');
   return (
     <div>
-      <CaseTitles title={title} subtitle={subtitle} />
+      <CaseTitles title={title} description={description} />
       <KeyMomentContainer />
       <AIExpert />
     </div>
   );
 }
 
-function CaseTitles({title, subtitle}) {
+function CaseTitles({title, description}) {
     return (
         <div className="case-title-container">
             <h1 className="case-title-text">
                 {title}
             </h1>
-            <p className="case-title-subtitle">
-                {subtitle}
+            <p className="case-title-description">
+                {description}
             </p>
         </div>
     );
