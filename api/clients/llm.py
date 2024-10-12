@@ -19,7 +19,7 @@ def punctuate_transcription(raw_text: str) -> Stream[ChatCompletionChunk]:
             "content": (
                 "You are a court reporter. I will provide you with the raw text from a transcription of a court case "
                 "which will not contain any punctuation. I want you to punctuate the text, ensuring the grammar rules "
-                "of english are upheld. Ensure you only return exactly the updated text with no additional comments."
+                "of English are upheld. Ensure you only return exactly the updated text with no additional comments."
             ),
         },
         {
@@ -69,7 +69,7 @@ def _gen_single_message(chunk: str, text_response: str) -> List[Dict[str, str]]:
         {
             "role": "system",
             "content": (
-                "You are a lawyer who summarises the transcript of legal cases. Be concise, accurate and understandable."
+                "You are a court reporter who summarises the transcript of legal cases. Be concise, accurate and understandable."
                 " Do not include an introduction or a conclusion. Speak in a neutral tone and do not give advice. Only "
                 "discuss what is in the source material. Use a tone that would fit in a news article."
             ),
