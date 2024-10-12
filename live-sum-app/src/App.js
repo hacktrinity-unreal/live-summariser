@@ -5,12 +5,12 @@ import LiveCase from './live-case.js';
 
 function App() {
   const caseTitle = "Brendan Case title";
-  const caseDesc = "Brendan and his troubles."
+  const caseSubtitle = "Brendan and his troubles."
   return (
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/live-case" element={<LiveCase title={caseTitle} description={caseDesc} />} />
+          <Route path="/live-case" element={<LiveCase title={caseTitle} subtitle={caseSubtitle} />} />
         </Routes>
     </BrowserRouter>
   );
