@@ -25,7 +25,7 @@ def handle_join(json):
     message = {"type": "JOIN_ROOM", "data": f"You have entered room: {room}"}
     logger.info(f"New entry for room {room}")
     emit("response", message, to=room, include_self=True, broadcast=True, room=room)
-    socketio.start_background_task(process, "oj1.wav", socketio)
+    socketio.start_background_task(process, room, "oj1.wav", socketio)
 
 
 if __name__ == "__main__":
