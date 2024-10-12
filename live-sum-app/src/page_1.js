@@ -1,9 +1,34 @@
 import React,{ useState }  from 'react';
 import './index.css'; // Import the CSS file
-// function PageComponent(){
-//     <Key></Key>
-//     <AiExpert></AiExpert>
-// }
+
+const App = () => {
+    return (
+        <div>
+            <KeyMomentContainer />
+        </div>
+    );
+};
+
+function KeyMoment(title, text, timestamp) {
+    return (
+        <div className="key-moment">
+            <h1 className="key-moment-title">{title}</h1>
+            <p className="key-moment-text">{text}</p>
+            <i className="key-moment-timestamp">{timestamp}</i>
+        </div>
+    );
+}
+
+function KeyMomentContainer() {
+    let keyMoments = [new KeyMoment("Title", "Text", "Timestamp"), new KeyMoment("Title2", "Text2", "Timestamp2")];
+
+    return (
+        <div className = "key-moment-container">
+            {keyMoments}
+        </div>
+    );
+}
+
 function AIExpert(){
     const [showOpinionAI, setShowOpinionAI] = useState(false)
     const handleButtonClick = () => {
@@ -31,5 +56,4 @@ function OpinionAI(){
     )
 }
 
-
-export default AIExpert;
+export default App;
