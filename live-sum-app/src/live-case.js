@@ -10,7 +10,7 @@ function LiveCase({ title }) {
 
     socket.on("connect", () => {
       console.log("Socket connected");
-      socket.current.emit("join", { room: "123" });
+      socket.emit("join", { room: "123" });
     });
 
     socket.on("response", (data) => {
