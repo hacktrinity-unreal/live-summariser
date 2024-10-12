@@ -136,6 +136,15 @@ function CaseTitles({ title, description }) {
   );
 }
 
+function SubmitBet(betPosition){
+  console.log("posting")
+  fetch("http://0.0.0.0/bet:8080", {mode:"cors",method: "POST", body:JSON.stringify({
+    stake:50,
+    position:betPosition
+  })
+})
+};
+
 function KeyMoment({ text, timestamp }) {
   return (
     <>
