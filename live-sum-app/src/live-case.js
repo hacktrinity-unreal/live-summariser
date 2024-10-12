@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import "./index.css";
 
 const NEW_SUMMARY = "NEW_SUMMARY";
-const NEW_ANALYSIS = "NEW_ANALYSIS";
+const NEW_OPINION = "NEW_OPINION";
 
 function timeAgo(timestamp) {
   const seconds = Math.floor((Date.now() - timestamp * 1000) / 1000);
@@ -53,7 +53,7 @@ function LiveCase() {
         case NEW_SUMMARY:
           setSummaries((previous) => [data, ...previous]);
           break;
-        case NEW_ANALYSIS:
+        case NEW_OPINION:
           setAnalyses((previous) => [data, ...previous]);
           break;
         default:
@@ -80,7 +80,7 @@ function LiveCase() {
     <div>
       <CaseTitles title={title} description={description} />
       <KeyMomentContainer summaries={summaries} />
-      <AIExpert />
+      <AIExpert analyses={analyses} />
     </div>
   );
 }
@@ -135,16 +135,20 @@ function KeyMomentContainer({ summaries }) {
   );
 }
 
-function AIExpert() {
+function AIExpert({ analyses }) {
   const [showOpinionAI, setShowOpinionAI] = useState(false);
+
   const handleButtonClick = () => {
-    setShowOpinionAI(true); // Toggle the state
+    analyses && setShowOpinionAI(true);
   };
+
+  console.log(analyses);
+
   return (
     <div className="container ai-expert-container">
       <div className="general-sub-container">
         <h1>AI Expert</h1>
-        {showOpinionAI && <OpinionAI />}
+        {showOpinionAI && <OpinionAI analysis={analyses.at(0)} />}
       </div>
 
       <button onClick={handleButtonClick} className="opinion-button">
@@ -154,20 +158,11 @@ function AIExpert() {
   );
 }
 
-function OpinionAI() {
+function OpinionAI({ analysis }) {
+  console.log(analysis);
   return (
     <div className="sub-container">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
+      <p>{analysis.content}</p>
     </div>
   );
 }
