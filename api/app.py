@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, ping_timeout=60, ping_interval=30, cors_allowed_origins="*")
 
 
 @socketio.on("join")
