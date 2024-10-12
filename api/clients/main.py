@@ -6,26 +6,28 @@ from pydub import AudioSegment
 import subprocess
 import os
 import tiktoken
-from video_utils import *
 
-os.system("sh /home/fedora/prog/live-summariser/.env")
+from .llm import client
+from .stt import *
+
+# os.system("sh /home/fedora/prog/live-summariser/.env")
 YOUR_API_KEY="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"
 MODEL_NAME_HERE = "llama-3.1-sonar-large-128k-online"
 
-COMMENTS_PATH = "/home/fedora/prog/live-summariser/llm/comments.txt"
-SUMMARY_PATH = "/home/fedora/prog/live-summariser/llm/summary.txt"
+COMMENTS_PATH = "./comments.txt"
+SUMMARY_PATH = "./summary.txt"
 
-with open(COMMENTS_PATH, "w") as f:
-    pass
-with open(SUMMARY_PATH, "w") as f:
-    pass
-
-
+# with open(COMMENTS_PATH, "w") as f:
+#     pass
+# with open(SUMMARY_PATH, "w") as f:
+#     pass
 
 
 
 
-text = speech_to_text("output.wav")
+
+
+text = speech_to_text("oj1.wav")
 
 
 def chunk_trancript(text):
@@ -103,20 +105,25 @@ def comment_on_summaries(outputs):
     return text_response
 
 
-while True:
-    text_chunks = chunk_trancript(next(text))
+def main():
 
-    client = OpenAI(api_key=YOUR_API_KEY, base_url="https://api.perplexity.ai")
 
-    outputs, summaries = [], []
-    text_response = None
-    for chunk in text_chunks:
-        text_response = summarize_chunk(chunk, text_response)
-        with open(SUMMARY_PATH, "a") as f:
-            f.write(text_response)
-        outputs.append(text_response)
-        lawyer_comment = comment_on_summaries(outputs)
-        with open(COMMENTS_PATH, "a") as f:
-            f.write(lawyer_comment)
+    while True:
+        text_chunks = chunk_trancript(next(text))
 
-        summaries.append(lawyer_comment)
+        # client = OpenAI(api_key=YOUR_API_KEY, base_url="https://api.perplexity.ai")
+
+        outputs, summaries = [], []
+        text_response = None
+        for chunk in text_chunks:
+            print("Hello")
+            text_response = summarize_chunk(chunk, text_response)
+            print(text_response)
+            with open(SUMMARY_PATH, "a") as f:
+                f.write(text_response)
+            outputs.append(text_response)
+            lawyer_comment = comment_on_summaries(outputs)
+            with open(COMMENTS_PATH, "a") as f:
+                f.write(lawyer_comment)
+
+            summaries.append(lawyer_comment)
