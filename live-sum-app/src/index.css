@@ -80,11 +80,9 @@ code {
   text-transform: uppercase; /* Transform text to uppercase for classiness */
   letter-spacing: 2px; /* Increased spacing between letters */
 }
-
 /* Case list styling */
 .case-list {
   display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: center; /* Center the items horizontally */
   gap: 20px; /* Increased space between items */
   padding: 10px; /* Padding around the grid */
@@ -110,6 +108,20 @@ code {
   transform: scale(1.02); /* Scale up on hover for a subtle effect */
 }
 
+/* Larger case styling for max rank */
+.case-column {
+  display: flex; /* Align cases vertically */
+  flex-direction: column; /* Stack cases in a column */
+  gap: 20px; /* Adjust this value to increase/decrease space between cases */
+}
+
+/* Center case styling */
+.case-column.center .case {
+  width: 500px; /* Wider for the centered case */
+  height: 742px; /* Taller for the centered case */
+}
+
+
 /* Thumbnail image styling */
 .case-thumbnail {
   width: 100%; /* Full width of the parent */
@@ -117,7 +129,13 @@ code {
   object-fit: cover; /* Ensures the image covers the space without distortion */
   border-radius: 8px; /* Rounded corners for the thumbnail */
 }
-
+.case-column.center .case-thumbnail {
+  /* Your styles here */
+  width: 100%; /* Example: Full width */
+  height: 500px; /* Example: Increased height */
+  object-fit: cover; /* Example: Maintain aspect ratio */
+  border-radius: 12px; /* Example: Different border radius */
+}
 /* Status badge styling */
 .status {
   position: absolute; /* Position absolutely within the .case */
@@ -128,7 +146,10 @@ code {
   border-radius: 5px; /* Rounded corners for the status badge */
   font-weight: bold; /* Make status bold */
   color: #333; /* Dark text for status */
-}.desc {
+}
+
+/* Description styling */
+.desc {
   font-size: 0.9rem; /* Smaller font size for the description */
   color: #666; /* Medium gray for the description text */
   margin: 10px 0; /* Space above and below the description */
