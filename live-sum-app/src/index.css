@@ -12,11 +12,9 @@ code {
     monospace;
 }
 
-.ai-expert-container {
+.sub-container {
   position: fixed; /* Make the container fixed on the screen */
   top: 15%; /* Center vertically */
-  right: 10%; /* Align to the right with some space */
-  width: 20%; /* Set width to 20% */
   height: 70%; /* Set height to 70% */
   background-color: #f9f9f9; /* Light background for better visibility */
   border: 1px solid #ccc; /* Optional: Add border */
@@ -26,16 +24,26 @@ code {
   flex-direction: column; /* Align items in a column */
 }
 
-.opinion-container {
-  /* Container for the opinion AI and the title */
-}
-
-.opinion-ai-box {
+.general-container {
   margin-top: 10px; /* Optional: Add some space below the title */
   padding: 10px;
   border: 1px solid #007BFF; /* Border for the opinion box */
   border-radius: 5px; /* Rounded corners */
   background-color: #e9f7fe; /* Light blue background for the opinion box */
+}
+
+.ai-expert-container {
+  width: 20%; /* Set width to 20% */
+  right: 10%; /* Align to the right with some space */
+}
+
+.key-moment-container {
+  width: 50%;
+  left: 10%; /* Align to the left with some space */
+}
+
+.opinion-container {
+  /* Container for the opinion AI and the title */
 }
 
 .opinion-button {
@@ -54,21 +62,26 @@ code {
   background-color: #0056b3; /* Darker shade on hover */
 }
 
-.key-moment-container {
-  position: absolute;
-  width: 45%;
-  left: 10%;
-  top: 25%;
-  transform: translate(0, -50%);
-  background-color: floralwhite;
-}
-
 .key-moment {
   width: 500px;
   border: 3px black;
-  background-color: lightgray;
+  background-color: floralwhite;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 13px;
 }
 
 .key-moment-timestamp {
   text-align: right;
+  display: block;
+}
+
+.case-title-container {
+  position: fixed;
+  top: 5%;
+  left: 10%;
+}
+
+.case-title-text {
+
 }
