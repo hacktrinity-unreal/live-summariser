@@ -61,7 +61,8 @@ def comment_on_summaries(outputs: List[str]) -> str:
 
 def _gen_single_message(chunk: str, text_response: str) -> List[Dict[str, str]]:
     postfix = (
-        f"Here is the summary that was generated from the previous chunk '{text_response}'"
+        f"Here is the summary that was generated from the previous chunk '{text_response}'. Make sure you do not "
+        f"repeat any information that has been provided in a previous response."
         if text_response
         else ""
     )
@@ -69,9 +70,11 @@ def _gen_single_message(chunk: str, text_response: str) -> List[Dict[str, str]]:
         {
             "role": "system",
             "content": (
-                "You are a court reporter who summarises the transcript of legal cases. Be concise, accurate and understandable."
-                " Do not include an introduction or a conclusion. Speak in a neutral tone and do not give advice. Only "
-                "discuss what is in the source material. Use a tone that would fit in a news article."
+                "You are a court reporter who summarises the transcript of legal cases. Be concise, accurate and "
+                "understandable. Do not include an introduction or a conclusion. Speak in a neutral tone and do not "
+                "give advice. Only discuss what is in the source material. Use a tone that would fit in a news article."
+                "Ensure any information you provide is relevant to the content provided and has been explicitly "
+                "mentioned. Try to keep your responses short and to the point."
             ),
         },
         {
