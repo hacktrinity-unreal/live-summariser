@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .ai-expert-container {
   position: fixed; /* Make the container fixed on the screen */
   top: 15%; /* Center vertically */
@@ -51,4 +52,23 @@ code {
 
 .opinion-button:hover {
   background-color: #0056b3; /* Darker shade on hover */
+}
+
+.key-moment-container {
+  position: absolute;
+  width: 45%;
+  left: 10%;
+  top: 25%;
+  transform: translate(0, -50%);
+  background-color: floralwhite;
+}
+
+.key-moment {
+  width: 500px;
+  border: 3px black;
+  background-color: lightgray;
+}
+
+.key-moment-timestamp {
+  text-align: right;
 }
