@@ -4,3 +4,7 @@
 #### Python stuff
 **/__pycache__
 
+
+### Audio
+**/*.wav
+
