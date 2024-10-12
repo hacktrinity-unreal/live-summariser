@@ -99,13 +99,13 @@ function AIExpert(){
         setShowOpinionAI(true); // Toggle the state
     };
     return (
-        <div className="container ai-expert-container">
+        <div className=" ai-expert-container">
             <div className="general-sub-container"> 
-                <h1>AI Expert</h1>
+                {/* <h1>AI Expert</h1> */}
                 {showOpinionAI && <OpinionAI />}
             </div>
             
-            <button onClick={handleButtonClick} className='opinion-button'>
+            <button onClick={handleButtonClick} className='opinion-button-ai'>
             Give AI opinion
             </button>
         </div>

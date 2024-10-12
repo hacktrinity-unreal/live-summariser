@@ -11,6 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.case-title-description{
+  margin-top: 1%;
+  text-transform: none;
+  font-size:20px;
+  font-weight: normal;
+  font-style: italic; 
+  color:#999; letter-spacing:-0.005em; word-spacing:1px;
+  letter-spacing:none;
+}
+.case-title-text {
+  margin-top: 10%;
+  font-size: 40px;
+  font-weight: 700; color:#202020;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px;
+}
+
 
 .container {
   top: 20%; /* Center vertically */
@@ -35,6 +52,11 @@ code {
   position: fixed;
   width: 30%; /* Set width to 20% */
   right: 10%; /* Align to the right with some space */
+  top: 20%; /* Center vertically */
+  height: 70%; /* Set height to 70% */
+  padding: 20px; /* Padding inside the container */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Align items in a column */
 }
 
 .key-moment-container {
@@ -76,6 +98,51 @@ hr {
   padding: 13px;
 }
 
+
+.opinion-button-ai {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.opinion-button-ai:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.opinion-button-ai:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.opinion-button-ai:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
 .key-moment-timestamp {
   font-size: 0.7rem;
   text-decoration: underline;
@@ -112,9 +179,7 @@ hr {
   margin-left: 0%;
 
 }
-.case-title-text {
-  margin: 0;
-}
+
 .double-buttons {
   position: absolute;
   left: 64%; 
