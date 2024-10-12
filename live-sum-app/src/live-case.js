@@ -42,16 +42,25 @@ function LiveCase() {
   );
 }
 
-function CaseTitles({title, description}) {
+function CaseTitles({title, description, guiltyOdds=1, notGuiltyOdds=1}) {
     return (
+      <>
         <div className="case-title-container">
+          <div className= "not-buttons">
             <h1 className="case-title-text">
                 {title}
             </h1>
             <p className="case-title-description">
                 {description}
             </p>
+          </div>
+           
         </div>
+         <div className = "double-buttons">
+         <button className="green-button">Not Guilty<br></br> Odds: {notGuiltyOdds}</button>
+         <button className="red-button">Guilty<br></br> Odds: {guiltyOdds}</button>
+       </div>
+       </>
     );
 }
 

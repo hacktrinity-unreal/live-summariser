@@ -45,6 +45,55 @@ code {
   left: 10%; /* Align to the left with some space */
 }
 
+
+.case-title-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  position: relative; /* To allow the positioning of buttons within this container */
+  justify-content: space-between; /* Distributes space between left and right */
+  align-items: center; /* Aligns them vertically */
+  gap: 0%;
+}
+.title-double-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0%;
+
+}
+.case-title-text {
+  margin: 0;
+}
+.double-buttons {
+  position: absolute;
+  left: 64%; 
+  top: 6%;
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+.green-button:hover , .red-button:hover {
+  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+}
+.green-button, .red-button {
+  
+  width: 175px; /* Set a fixed width for both buttons */
+  height: 80px; /* Set a fixed height for both buttons */
+  font-size: 18px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.green-button {
+  background-color: rgba(13, 149, 30, 0.8)
+}
+
+.red-button {
+  background-color: rgba(196, 10, 45, 0.8)
+}
+
 .opinion-container {
   /* Container for the opinion AI and the title */
 }
