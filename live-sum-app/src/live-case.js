@@ -6,6 +6,32 @@ import "./index.css";
 const NEW_SUMMARY = "NEW_SUMMARY";
 const NEW_ANALYSIS = "NEW_ANALYSIS";
 
+function timeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp * 1000) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + " years ago";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months ago";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days ago";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours ago";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes ago";
+  }
+  return Math.floor(seconds) + " seconds ago";
+}
+
 function LiveCase() {
   const [summaries, setSummaries] = React.useState([]);
   const [analyses, setAnalyses] = React.useState([]);
@@ -84,11 +110,10 @@ function KeyMoment({ title, text, timestamp }) {
   return (
     <>
       <div className="key-moment">
-      <i className="key-moment-timestamp">{timestamp}</i>
+        <i className="key-moment-timestamp">{timeAgo(timestamp)}</i>
         <p className="key-moment-text">{text}</p>
-        
       </div>
-      
+
       <br></br>
       <hr></hr>
     </>
@@ -96,20 +121,16 @@ function KeyMoment({ title, text, timestamp }) {
 }
 
 function KeyMomentContainer({ summaries }) {
-  console.log(summaries);
   return (
     <div className="container key-moment-container">
-      {summaries.map((summary) => {
-        console.log(summary);
-        return (
-          <KeyMoment
-            title=""
-            text={summary.content}
-            timestamp={summary.timestamp}
-            key={summary.timestamp}
-          />
-        );
-      })}
+      {summaries.map((summary) => (
+        <KeyMoment
+          title=""
+          text={summary.content}
+          timestamp={summary.timestamp}
+          key={summary.timestamp}
+        />
+      ))}
     </div>
   );
 }
