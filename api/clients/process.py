@@ -1,9 +1,5 @@
 from enum import Enum
 from datetime import datetime
-from flask import current_app
-
-from flask_socketio import emit
-# from app import socketio
 
 from . import llm
 from .stt import speech_to_text
@@ -27,12 +23,8 @@ def process(audio_path: str, socketio) -> None:
         text_response = llm.summarize_chunk(chunk, text_response)
         _send_message("123", MessageType.NEW_SUMMARY, text_response, socketio)
         print(text_response)
-        # with open(SUMMARY_PATH, "a") as f:
-        #     f.write(text_response)
         outputs.append(text_response)
         lawyer_comment = llm.comment_on_summaries(outputs)
-        # with open(COMMENTS_PATH, "a") as f:
-        #     f.write(lawyer_comment)
         _send_message("123", MessageType.NEW_OPINION, lawyer_comment, socketio)
 
         summaries.append(lawyer_comment)
