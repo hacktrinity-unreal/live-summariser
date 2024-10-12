@@ -14,7 +14,7 @@ def speech_to_text(video_path: str) -> Generator[str, None, None]:
     audio = video.audio
     path = f"{_strip_extension(video_path)}.wav"
     audio.write_audiofile(path)
-    return _process_in_chunks(path, 60000)
+    return _process_in_chunks(path)
 
 
 def _strip_extension(file_path: str) -> str:
@@ -24,14 +24,14 @@ def _strip_extension(file_path: str) -> str:
     return file_path
 
 
-def _process_in_chunks(audio_path: str, chunk_length_ms: int) -> Generator[str, None, None]:
+def _process_in_chunks(audio_path: str) -> Generator[str, None, None]:
     audio = AudioSegment.from_wav(audio_path)
-    num_chunks = len(audio) // chunk_length_ms + (1 if len(audio) % chunk_length_ms > 0 else 0)
+    num_chunks = len(audio) // CHUNK_SIZE + (1 if len(audio) % CHUNK_SIZE > 0 else 0)
 
     with make_temp_directory() as td:
         for i in range(num_chunks):
-            start_time = i * chunk_length_ms
-            end_time = start_time + chunk_length_ms
+            start_time = i * CHUNK_SIZE
+            end_time = start_time + CHUNK_SIZE
             chunk = audio[start_time:end_time]
             chunk_filename = f"{td}/chunk_{i}.wav"
             chunk.export(chunk_filename, format="wav")
