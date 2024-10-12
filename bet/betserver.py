@@ -2,6 +2,14 @@ from aiohttp import web
 import json
 from bet import Bet
 PATH = "bet.json"
+
+
+CORS_HEADERS = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*"
+}
+
+
 async def handle_add_bet(request):
     data = await request.json()
     bet = Bet(PATH)
@@ -18,7 +26,7 @@ async def handle_add_bet(request):
             'status': 'success',
             'received': data
         }
-    return web.json_response(response_data)
+    return web.json_response(body=response_data, headers=CORS_HEADERS)
 
 async def handle_get_returns(request):
     bet = Bet(PATH)
@@ -27,7 +35,7 @@ async def handle_get_returns(request):
         "not_guilty":1.4
 
     })
-    return web.json_response(body=response)
+    return web.json_response(body=response, headers=CORS_HEADERS)
 
 
 
