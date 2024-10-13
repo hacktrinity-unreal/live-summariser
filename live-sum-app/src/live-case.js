@@ -180,12 +180,6 @@ function AIExpert({ analyses }) {
 
   return (
     <div className=" ai-expert-container">
-      <div className="general-sub-container">
-        {analyses && showOpinionAI && (
-          <OpinionAI content={analyses[index].content} />
-        )}
-      </div>
-
       <button
         onClick={handleButtonClick}
         className="opinion-button-ai"
@@ -193,6 +187,11 @@ function AIExpert({ analyses }) {
       >
         Give AI opinion
       </button>
+      <div className="general-sub-container">
+        {analyses && showOpinionAI && (
+          <OpinionAI content={analyses[index].content} />
+        )}
+      </div>
     </div>
   );
 }
