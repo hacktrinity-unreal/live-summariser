@@ -2,7 +2,6 @@ import flask
 from flask import Flask
 from flask_cors import CORS
 from flask_socketio import SocketIO, join_room
-
 from flask_socketio import emit
 
 from clients.process import process

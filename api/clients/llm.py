@@ -1,12 +1,14 @@
 from typing import List, Dict
 
-from openai import OpenAI, Stream
+from dotenv import load_dotenv
+from openai import OpenAI
 import os
 
-from openai.types.chat import ChatCompletionChunk
+
+load_dotenv()
 
 BASE_URL = "https://api.perplexity.ai"
-API_KEY = os.environ["PERPLEXITY_API_KEY"]
+API_KEY = os.getenv("PERPLEXITY_API_KEY")
 MODEL = "llama-3.1-sonar-large-128k-online"
 
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
