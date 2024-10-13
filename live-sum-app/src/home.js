@@ -130,7 +130,7 @@ function Home (){
 function Case({id, title, thumbnail, description, live}){
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate(`/live-case?id=${id}&title=${title}&description=${description}`);
+        navigate(`/live-case?id=${id}&title=${title}`);
     };
    
     return (

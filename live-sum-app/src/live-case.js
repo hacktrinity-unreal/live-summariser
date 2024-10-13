@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import ReactMarkdown from "react-markdown";
 import { useSearchParams } from "react-router-dom";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 const NEW_SUMMARY = "NEW_SUMMARY";
 const NEW_OPINION = "NEW_OPINION";
@@ -34,15 +35,21 @@ function timeAgo(timestamp) {
 }
 
 function LiveCase() {
+  const navigate = useNavigate();
+
   const [summaries, setSummaries] = React.useState([]);
   const [analyses, setAnalyses] = React.useState([]);
 
   const [searchParams] = useSearchParams();
 
   const title = searchParams.get("title");
-  const description = searchParams.get("description");
 
   React.useEffect(() => {
+    if (!title) {
+      navigate("/");
+      return;
+    }
+
     const socket = io("http://localhost:8000", {
       transports: ["websocket"],
     });
@@ -75,11 +82,11 @@ function LiveCase() {
       socket.disconnect();
       console.log("Socket connection closed");
     };
-  }, []);
+  }, [title]);
 
   return (
     <div>
-      <CaseTitles title={title} description={description} />
+      <CaseTitles title={title} />
       <KeyMomentContainer summaries={summaries} />
       <AIExpert analyses={analyses} />
     </div>
@@ -98,7 +105,7 @@ async function fetchOdds() {
   }
 }
 
-function CaseTitles({ title, description }) {
+function CaseTitles({ title }) {
   const [guiltyOdds, setGuiltyOdds] = useState(0.0);
   const [notGuiltyOdds, setNotGuiltyOdds] = useState(0.0);
 
