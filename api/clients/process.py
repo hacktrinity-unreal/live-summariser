@@ -6,6 +6,12 @@ from flask_socketio import SocketIO
 from . import llm
 from .stt import speech_to_text
 
+import logging
+
+logging.basicConfig()
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
 
 class MessageType(Enum):
     NEW_SUMMARY = "NEW_SUMMARY"
@@ -18,12 +24,15 @@ def process(room_id: str, audio_path: str, socketio: SocketIO) -> None:
     outputs, summaries = [], []
     text_response = None
     for chunk in text_chunks:
-        text_response = llm.summarize_chunk(chunk, text_response)
-        _send_message(room_id, MessageType.NEW_SUMMARY, text_response, socketio)
-        outputs.append(text_response)
-        lawyer_comment = llm.comment_on_summaries(outputs)
-        _send_message(room_id, MessageType.NEW_OPINION, lawyer_comment, socketio)
-        summaries.append(lawyer_comment)
+        try:
+            text_response = llm.summarize_chunk(chunk, text_response)
+            _send_message(room_id, MessageType.NEW_SUMMARY, text_response, socketio)
+            outputs.append(text_response)
+            lawyer_comment = llm.comment_on_summaries(outputs)
+            _send_message(room_id, MessageType.NEW_OPINION, lawyer_comment, socketio)
+            summaries.append(lawyer_comment)
+        except Exception as e:
+            logger.error(f"Error in processing chunk!: {e}")
 
 
 def _send_message(room_id: str, message_type: MessageType, content: str, socketio: SocketIO) -> None:
