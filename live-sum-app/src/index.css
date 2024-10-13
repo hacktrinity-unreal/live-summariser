@@ -21,7 +21,6 @@ code {
   letter-spacing:none;
 }
 .case-title-text {
-  /* margin-top: 10%; */
   font-size: 40px;
   font-weight: 700; color:#202020;
   text-transform: uppercase;
@@ -30,33 +29,32 @@ code {
 
 
 .container {
-  top: 20%; /* Center vertically */
-  height: 70%; /* Set height to 70% */
-  /* background-color: #f9f9f9; Light background for better visibility */
-  border: 1px solid #ccc; /* Optional: Add border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  padding: 20px; /* Padding inside the container */
-  display: flex; /* Enable flexbox */
-  flex-direction: column; /* Align items in a column */
+  top: 20%;
+  height: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sub-container {
-  margin-top: 10px; /* Optional: Add some space below the title */
+  margin-top: 10px;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Border for the opinion box */
-  border-radius: 5px; /* Rounded corners */
-  background-color: white; /* Light blue background for the opinion box */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: white;
 }
 
 .ai-expert-container {
   position: fixed;
-  width: 30%; /* Set width to 20% */
-  right: 10%; /* Align to the right with some space */
-  top: 18%; /* Center vertically */
-  height: 70%; /* Set height to 70% */
-  padding: 20px; /* Padding inside the container */
-  display: flex; /* Enable flexbox */
-  flex-direction: column; /* Align items in a column */
+  width: 30%;
+  right: 10%;
+  top: 18%;
+  height: 70%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .general-sub-container{
   overflow: auto;
@@ -67,7 +65,7 @@ code {
   overflow-y: auto;
   max-height: 80vh;
   width: 40%;
-  left: 10%; /* Align to the left with some space */
+  left: 10%;
 }
 
 hr {
@@ -79,23 +77,20 @@ hr {
   width: 90%;
 }
 
-/* Description styling */
 .desc {
-  font-size: 0.9rem; /* Smaller font size for the description */
-  color: #666; /* Medium gray for the description text */
-  margin: 10px 0; /* Space above and below the description */
-  max-height: 60px; /* Limit height to keep the layout clean */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-  display: -webkit-box; /* For webkit browsers */
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+  font-size: 0.9rem;
+  color: #666;
+  margin: 10px 0;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .key-moment {
   width: 90%;
-  /* border: 3px black; */
   background-color: white;
-  /* border: 2px solid rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
   margin-left:3%;
   padding: 13px;
@@ -153,9 +148,9 @@ hr {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
-  box-shadow: none; /* Disable shadow */
-  transform: none; /* Disable transform effects */
-  transition: none; /* Disable transition for disabled state */
+  box-shadow: none;
+  transform: none;
+  transition: none;
 }
 
 .key-moment-timestamp {
@@ -164,7 +159,6 @@ hr {
   font-style: italic;
   text-align: left;
   padding: 5px;
-  /* border: 1px solid #ccc; Light gray border */
   border-radius: 15;
 }
 
@@ -189,120 +183,106 @@ hr {
 
 }
 
-
-
-.opinion-container {
-  /* Container for the opinion AI and the title */
-}
-
 .opinion-button {
-  background-color: #007BFF; /* Button color */
-  color: white; /* Button text color */
-  padding: 10px 15px; /* Button padding */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners for the button */
-  cursor: pointer; /* Change cursor on hover */
-  transition: background-color 0.3s; /* Smooth background change */
-  margin-top: auto; /* Push the button to the bottom */
-  align-self: center; /* Optional: Center the button horizontally */
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: auto;
+  align-self: center;
 }
-
 .opinion-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
-
-/* Overall body style */
 .wholeBody {
-  background-color: #f8f9fa; /* Soft light background */
-  min-height: 100vh; /* Full height of the viewport */
-  display: flex; /* Use flexbox for centering content */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center items horizontally */
-  padding: 20px; /* Add padding around the container */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Header style */
 .headerCase {
-  text-align: center; /* Center the text */
-  margin: 20px 0; /* Space above and below the header */
-  padding: 20px; /* Padding above and below the header text */
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
 }
 
 .headerCase h1 {
-  font-size: 4rem; /* Increased font size for the title */
-  color: #333333; /* Dark gray for the text */
-  font-family: 'Georgia', serif; /* Elegant serif font */
-  font-weight: bold; /* Bold weight for the title */
-  margin: 0; /* Remove default margin */
-  text-transform: uppercase; /* Transform text to uppercase for classiness */
-  letter-spacing: 2px; /* Increased spacing between letters */
-}
-/* Case list styling */
-.case-list {
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center the items horizontally */
-  gap: 20px; /* Increased space between items */
-  padding: 10px; /* Padding around the grid */
+  font-size: 4rem;
+  color: #333333;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Individual case styling */
+.case-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
 .case {
-  position: relative; /* Position relative to allow absolute positioning of children */
-  border: 1px solid #ccc; /* Border around each case */
-  border-radius: 10px; /* Rounded corners for the case */
-  padding: 10px; /* Padding for each case */
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
-  width: 250px; /* Width for each case */
-  height: 350px; /* Fixed height for each case */
-  cursor: pointer; /* Makes the div look clickable */
-  overflow: hidden; /* Hide overflow to keep the layout clean */
-  background-color: #ffffff; /* White background for the case */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
-  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .case:hover {
-  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+  transform: scale(1.02);
 }
 
-/* Larger case styling for max rank */
 .case-column {
-  display: flex; /* Align cases vertically */
-  flex-direction: column; /* Stack cases in a column */
-  gap: 20px; /* Adjust this value to increase/decrease space between cases */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Center case styling */
 .case-column.center .case {
-  width: 500px; /* Wider for the centered case */
-  height: 742px; /* Taller for the centered case */
+  width: 500px;
+  height: 742px;
 }
 
-/* Thumbnail image styling */
 .case-thumbnail {
-  width: 100%; /* Full width of the parent */
-  height: 150px; /* Fixed height for the images */
-  object-fit: cover; /* Ensures the image covers the space without distortion */
-  border-radius: 8px; /* Rounded corners for the thumbnail */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }
+
 .case-column.center .case-thumbnail {
-  /* Your styles here */
-  width: 100%; /* Example: Full width */
-  height: 500px; /* Example: Increased height */
-  object-fit: cover; /* Example: Maintain aspect ratio */
-  border-radius: 12px; /* Example: Different border radius */
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
 }
-/* Status badge styling */
+
 .status {
-  position: absolute; /* Position absolutely within the .case */
-  top: 10px; /* 10px from the top */
-  right: 10px; /* 10px from the right */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
-  padding: 5px 10px; /* Padding around the text */
-  border-radius: 5px; /* Rounded corners for the status badge */
-  font-weight: bold; /* Make status bold */
-  color: #333; /* Dark text for status */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
 }
 
 .double-buttons {
@@ -310,16 +290,16 @@ hr {
   left: 64%; 
   top: 6%;
   display: flex;
-  gap: 10px; /* Space between the buttons */
+  gap: 10px;
 }
 
 .green-button:hover , .red-button:hover {
-  transform: scale(1.02); /* Scale up on hover for a subtle effect */
+  transform: scale(1.02);
 }
 
 .green-button, .red-button {
-  width: 175px; /* Set a fixed width for both buttons */
-  height: 80px; /* Set a fixed height for both buttons */
+  width: 175px;
+  height: 80px;
   font-size: 18px;
   border: none;
   color: white;
@@ -333,7 +313,7 @@ hr {
   left: 62%;
   top: 2%;
   color: rgba(0,0,0,0.6);
-  transition: color 0.2s ease; /* Smooth transition for hover effect */
+  transition: color 0.2s ease;
 }
 
 .disclaimer:hover {
@@ -365,15 +345,15 @@ hr {
 }
 
 .red-button {
-  background-color: #ffcccc; /* Light red background */
+  background-color: #ffcccc;
   border-radius: 100px;
-  box-shadow: rgba(255, 99, 71, .2) 0 -25px 18px -14px inset, /* Tomato color */
+  box-shadow: rgba(255, 99, 71, .2) 0 -25px 18px -14px inset,
               rgba(255, 99, 71, .15) 0 1px 2px, 
               rgba(255, 99, 71, .15) 0 2px 4px, 
               rgba(255, 99, 71, .15) 0 4px 8px, 
               rgba(255, 99, 71, .15) 0 8px 16px, 
               rgba(255, 99, 71, .15) 0 16px 32px;
-  color: #a00; /* Dark red text color */
+  color: #a00;
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
@@ -389,7 +369,7 @@ hr {
 }
 
 .red-button:hover {
-  box-shadow: rgba(255, 99, 71, .35) 0 -25px 18px -14px inset, /* Tomato color on hover */
+  box-shadow: rgba(255, 99, 71, .35) 0 -25px 18px -14px inset,
               rgba(255, 99, 71, .25) 0 1px 2px, 
               rgba(255, 99, 71, .25) 0 2px 4px, 
               rgba(255, 99, 71, .25) 0 4px 8px, 
@@ -402,28 +382,28 @@ hr {
   position: absolute;
   left:1%;
   top: 2%;
-  font-size: 1.5rem; /* Increased font size for the title */
-  color: #333333; /* Dark gray for the text */
-  background-color: rgb(255,255,255); /* Muted purple background */
-  font-family: 'Georgia', serif; /* Elegant serif font */
-  font-weight: bold; /* Bold weight for the title */
-  margin: 0; /* Remove default margin */
-  text-transform: uppercase; /* Transform text to uppercase for classiness */
-  letter-spacing: 1px; /* Increased spacing between letters */
-  width: 7.5%; /* Set a fixed width for the logo container */
-  white-space: normal; /* Allow the text to wrap */
+  font-size: 1.5rem;
+  color: #333333;
+  background-color: rgb(255,255,255);
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 7.5%;
+  white-space: normal;
   padding:4px;
-  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-  border: none; /* No border */
-  border-radius: 8px; /* Rounded corners */
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  border-radius: 8px;
 }
 
 .logo:hover {
-  background-color: rgb(240,240,240); /* Darker purple on hover */
-  transform: scale(1.05); /* Slight scale-up effect on hover */
+  background-color: rgb(240,240,240);
+  transform: scale(1.05);
 }
 
 .logo i {
-  font-size: 28px; /* Larger icon size for visibility */
-  color: white; /* Icon color */
+  font-size: 28px;
+  color: white;
 }
