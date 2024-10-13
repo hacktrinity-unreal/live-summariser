@@ -19,7 +19,12 @@ def speech_to_text(audio_path: str) -> Generator[str, None, None]:
             chunk_filename = f"{td}/chunk_{i}.wav"
             chunk.export(chunk_filename, format="wav")
 
-            yield _recognise_text(chunk_filename)
+            try:
+                recognised_text = _recognise_text(chunk_filename)
+            except (Exception,):
+                recognised_text = ""
+
+            yield recognised_text
 
 
 def _recognise_text(audio_path: str) -> str:

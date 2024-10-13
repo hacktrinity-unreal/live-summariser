@@ -25,12 +25,15 @@ def process(room_id: str, audio_path: str, socketio: SocketIO) -> None:
     text_response = None
     for chunk in text_chunks:
         try:
-            text_response = llm.summarize_chunk(chunk, text_response)
-            _send_message(room_id, MessageType.NEW_SUMMARY, text_response, socketio)
-            outputs.append(text_response)
-            lawyer_comment = llm.comment_on_summaries(outputs)
-            _send_message(room_id, MessageType.NEW_OPINION, lawyer_comment, socketio)
-            summaries.append(lawyer_comment)
+            if chunk:
+                text_response = llm.summarize_chunk(chunk, text_response)
+                _send_message(room_id, MessageType.NEW_SUMMARY, text_response, socketio)
+                outputs.append(text_response)
+                lawyer_comment = llm.comment_on_summaries(outputs)
+                _send_message(room_id, MessageType.NEW_OPINION, lawyer_comment, socketio)
+                summaries.append(lawyer_comment)
+            else:
+                logging.info("Empty chunk!")
         except Exception as e:
             logger.error(f"Error in processing chunk!: {e}")
 
