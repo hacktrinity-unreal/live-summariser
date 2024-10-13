@@ -30,9 +30,11 @@ async def handle_add_bet(request):
 
 async def handle_get_returns(request):
     bet = Bet(PATH)
+
+    prob2odds = lambda x:x/(x-1)
     response = json.dumps({
-        "guilty":1.5,
-        "not_guilty":1.4
+        "guilty":prob2odds(bet.get_odds()[0]),
+        "not_guilty":prob2odds(bet.get_odds()[1])
 
     })
     return web.json_response(body=response, headers=CORS_HEADERS)
@@ -41,7 +43,7 @@ async def handle_get_returns(request):
 
 app = web.Application()
 #position is either "guilty" or "not_guilty"
-app.add_routes([web.get('/bet/{amount}/{position}', handle_add_bet),
+app.add_routes([web.get('/bet', handle_add_bet),
                 web.get('/get_returns', handle_get_returns)])
 
 if __name__ == '__main__':
