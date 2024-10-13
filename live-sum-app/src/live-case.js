@@ -4,6 +4,9 @@ import ReactMarkdown from "react-markdown";
 import { useSearchParams } from "react-router-dom";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import Font Awesome
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';  // Specific icon
+
 
 const NEW_SUMMARY = "NEW_SUMMARY";
 const NEW_OPINION = "NEW_OPINION";
@@ -122,9 +125,16 @@ function CaseTitles({ title }) {
 
     getOdds();
   }, []);
-
+  const navigate = useNavigate();
+  const handleBackButton = () => {
+    navigate('/');
+  }
   return (
     <>
+      <button className = "back-button" onClick={handleBackButton}>
+      {/* &#8249; */}
+      <FontAwesomeIcon icon={faAngleLeft} />
+      </button>
       <div className="case-title-container">
         <div>
           <h1 className="case-title-text">{title}</h1>

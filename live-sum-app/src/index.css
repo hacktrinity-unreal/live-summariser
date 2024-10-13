@@ -387,3 +387,31 @@ hr {
               rgba(255, 99, 71, .25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+.back-button {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  width: 40px; /* Button width */
+  height: 40px; /* Button height */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgb(255,255,255); /* Muted purple background */
+  color: black; /* Icon color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  border: none; /* No border */
+}
+
+.back-button:hover {
+  background-color: rgb(240,240,240); /* Darker purple on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+.back-button i {
+  font-size: 28px; /* Larger icon size for visibility */
+  color: white; /* Icon color */
+}
