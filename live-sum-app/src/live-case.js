@@ -121,7 +121,6 @@ function CaseTitles({ title, description }) {
       <div className="case-title-container">
         <div>
           <h1 className="case-title-text">{title}</h1>
-          <p className="case-title-description">{description}</p>
         </div>
       </div>
       <div className="double-buttons">
