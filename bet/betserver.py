@@ -30,7 +30,7 @@ async def handle_add_bet(request):
 async def handle_get_returns(request):
     bet = Bet(PATH)
 
-    prob2odds = lambda x: x / (x - 1)
+    prob2odds = lambda x: x / (1 - x)
     response = json.dumps(
         {
             "guilty": prob2odds(bet.get_odds()[0]),
