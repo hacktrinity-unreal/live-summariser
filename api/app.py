@@ -19,12 +19,13 @@ socketio = SocketIO(app, ping_timeout=60, ping_interval=30, cors_allowed_origins
 
 @socketio.on("join")
 def handle_join(json):
-    room = json["room"]
+    room = json["room"].lower()
     join_room(room, sid=flask.request.sid, namespace="/")
     message = {"type": "JOIN_ROOM", "data": f"You have entered room: {room}"}
     logger.info(f"New entry for room {room}")
     emit("response", message, to=room, include_self=True, broadcast=True, room=room)
-    socketio.start_background_task(process, room, "oj1.wav", socketio)
+    if room == "murder trial of o. j. simpson":
+        socketio.start_background_task(process, room, "oj1.wav", socketio)
 
 
 if __name__ == "__main__":
