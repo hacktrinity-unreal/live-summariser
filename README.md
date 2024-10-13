@@ -2,7 +2,11 @@
 
 This product is part of HackTrinity 2024 GenAI x Legal. We have built a live summariser of legal cases with a few extra features.
 
-#### Technical
+### Project Schema
+
+![](schema.png "")
+
+#### Technical Details
 Setting up local instances:
 
 You must have a `PERPLEXITY_API_KEY` defined in `api/.env` for this to work.
