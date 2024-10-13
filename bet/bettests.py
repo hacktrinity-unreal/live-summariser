@@ -35,7 +35,8 @@ class TestBet(unittest.TestCase):
         self.assertEqual(bet.bets, bet2.bets)
 
     def test_post(self):
-        server = subprocess.Popen(["python", "betserver.py"])
+        # TODO TEMP
+        server = subprocess.Popen(["python3", "betserver.py"])
 
         content = {
             "position": "guilty",
