@@ -279,7 +279,6 @@ hr {
   height: 742px; /* Taller for the centered case */
 }
 
-
 /* Thumbnail image styling */
 .case-thumbnail {
   width: 100%; /* Full width of the parent */
@@ -306,7 +305,6 @@ hr {
   color: #333; /* Dark text for status */
 }
 
-
 .double-buttons {
   position: absolute;
   left: 64%; 
@@ -314,11 +312,12 @@ hr {
   display: flex;
   gap: 10px; /* Space between the buttons */
 }
+
 .green-button:hover , .red-button:hover {
   transform: scale(1.02); /* Scale up on hover for a subtle effect */
 }
+
 .green-button, .red-button {
-  
   width: 175px; /* Set a fixed width for both buttons */
   height: 80px; /* Set a fixed height for both buttons */
   font-size: 18px;
@@ -329,6 +328,17 @@ hr {
   border-radius: 5px;
 }
 
+.disclaimer {
+  position: absolute;
+  left: 64%;
+  top: 2%;
+  color: rgba(0,0,0,0.6);
+  transition: color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.disclaimer:hover {
+  color: rgba(0,0,0,1.0);
+}
 
 .green-button{
   background-color: #c2fbd7;
@@ -387,8 +397,6 @@ hr {
               rgba(255, 99, 71, .25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-
-
 
 .logo{
   position: absolute;

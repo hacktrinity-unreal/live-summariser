@@ -156,6 +156,9 @@ function CaseTitles({ title }) {
           <h1 className="case-title-text">{title}</h1>
         </div>
       </div>
+      <div className="disclaimer">
+        <i>Disclaimer: You are risking real money by placing this bet.</i>
+      </div>
       <div className="double-buttons">
         <button className="green-button" onClick={() => SubmitBet("not_guilty") }>
           Not Guilty<br></br> Odds: {notGuiltyOdds}
