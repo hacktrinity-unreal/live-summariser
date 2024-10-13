@@ -37,6 +37,11 @@ function LiveCase() {
   const [summaries, setSummaries] = React.useState([]);
   const [analyses, setAnalyses] = React.useState([]);
 
+  const [searchParams] = useSearchParams();
+
+  const title = searchParams.get("title");
+  const description = searchParams.get("description");
+
   React.useEffect(() => {
     const socket = io("http://localhost:8000", {
       transports: ["websocket"],
@@ -44,7 +49,7 @@ function LiveCase() {
 
     socket.on("connect", () => {
       console.log("Socket connected");
-      socket.emit("join", { room: "123" });
+      socket.emit("join", { room: title });
     });
 
     socket.on("response", (message) => {
@@ -72,11 +77,6 @@ function LiveCase() {
     };
   }, []);
 
-  const [searchParams] = useSearchParams();
-
-  const id = searchParams.get("id");
-  const title = searchParams.get("title");
-  const description = searchParams.get("description");
   return (
     <div>
       <CaseTitles title={title} description={description} />
@@ -121,7 +121,6 @@ function CaseTitles({ title, description }) {
       <div className="case-title-container">
         <div>
           <h1 className="case-title-text">{title}</h1>
-          <p className="case-title-description">{description}</p>
         </div>
       </div>
       <div className="double-buttons">
@@ -181,12 +180,6 @@ function AIExpert({ analyses }) {
 
   return (
     <div className=" ai-expert-container">
-      <div className="general-sub-container">
-        {analyses && showOpinionAI && (
-          <OpinionAI content={analyses[index].content} />
-        )}
-      </div>
-
       <button
         onClick={handleButtonClick}
         className="opinion-button-ai"
@@ -194,6 +187,11 @@ function AIExpert({ analyses }) {
       >
         Give AI opinion
       </button>
+      <div className="general-sub-container">
+        {analyses && showOpinionAI && (
+          <OpinionAI content={analyses[index].content} />
+        )}
+      </div>
     </div>
   );
 }
