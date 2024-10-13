@@ -330,7 +330,7 @@ hr {
 
 .disclaimer {
   position: absolute;
-  left: 64%;
+  left: 62%;
   top: 2%;
   color: rgba(0,0,0,0.6);
   transition: color 0.2s ease; /* Smooth transition for hover effect */
