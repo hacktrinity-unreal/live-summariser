@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .case-title-description{
-  margin-top: 1%;
+   margin-top: -1%; 
   text-transform: none;
   font-size:20px;
   font-weight: normal;
@@ -21,7 +21,7 @@ code {
   letter-spacing:none;
 }
 .case-title-text {
-  margin-top: 10%;
+  /* margin-top: 10%; */
   font-size: 40px;
   font-weight: 700; color:#202020;
   text-transform: uppercase;
@@ -52,7 +52,7 @@ code {
   position: fixed;
   width: 30%; /* Set width to 20% */
   right: 10%; /* Align to the right with some space */
-  top: 20%; /* Center vertically */
+  top: 18%; /* Center vertically */
   height: 70%; /* Set height to 70% */
   padding: 20px; /* Padding inside the container */
   display: flex; /* Enable flexbox */
@@ -158,23 +158,17 @@ hr {
 
 .case-title-container {
   position: fixed;
-  top: 5%;
-  left: 10%;
+  top: 3%;
+  left: 10%; 
+  width: 43%;
+  align-items: center;  
 }
 
 .case-title-subtitle {
   font-style: italic;
 }
 
-.case-title-container {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 20px;
-  position: relative; /* To allow the positioning of buttons within this container */
-  justify-content: space-between; /* Distributes space between left and right */
-  align-items: center; /* Aligns them vertically */
-  gap: 0%;
-}
+
 .title-double-buttons {
   display: flex;
   justify-content: space-between;
@@ -322,13 +316,7 @@ hr {
   cursor: pointer;
   border-radius: 5px;
 }
-/* .green-button {
-  background-color: rgba(13, 149, 30, 0.8)
-}
 
-.red-button {
-  background-color: rgba(196, 10, 45, 0.8)
-} */
 
 .green-button{
   background-color: #c2fbd7;

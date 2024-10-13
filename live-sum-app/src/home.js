@@ -15,7 +15,7 @@ import court5 from './court5.jpg';
 
 // List of cases (static data for now)
 const cases = [
-    { id: 1, title: 'Brendan', thumbnail: court1, description: 'Brendan and his troubles with minor consequences.', live: true, rank: 5 },
+    { id: 1, title: 'Murder trial of O. J. Simpson', thumbnail: court1, description: 'The O.J. Simpson trial centers on the former NFL star, accused of the 1994 murders of his ex-wife, Nicole Brown Simpson, and her friend Ronald Goldman. ', live: true, rank: 5 },
     { id: 2, title: 'AI committed fraud', thumbnail: court2,description: 'AI finally showed its true colours, follow it live !', live: false, rank:4},
     { id: 3, title: 'The President is a criminal', thumbnail: court3, description: 'Everyone knew it already, he will face serious charges.', live: false, rank:4 },
     { id: 4, title: 'Pollution Scandal', thumbnail: court4, description: 'Big Corporation faces greenhouse gas emission charges', live: false, rank: 4},
