@@ -190,7 +190,7 @@ function AIExpert({ analyses }) {
       <button
         onClick={handleButtonClick}
         className="opinion-button-ai"
-        disabled={!analyses.length}
+        disabled={!analyses.length || index === 0}
       >
         Give AI opinion
       </button>
