@@ -147,6 +147,17 @@ hr {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+.opinion-button-ai:disabled,
+.opinion-button-ai[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none; /* Disable shadow */
+  transform: none; /* Disable transform effects */
+  transition: none; /* Disable transition for disabled state */
+}
+
 .key-moment-timestamp {
   font-size: 0.7rem;
   text-decoration: underline;
