@@ -1,6 +1,6 @@
 ### Live legal case summariser
 
-This product is part of HackTrinity 2024 GenAI x Legal. We have built a live summariser of legal cases with a few extra features.
+This product is part of HackTrinity 2024 GenAI x Legal. We have built a web application that provides instant summary of live cases, AI opinion on the cases and allows users to bet on the outcome of the case.
 
 ### Project Schema
 
