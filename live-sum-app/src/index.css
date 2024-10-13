@@ -387,3 +387,35 @@ hr {
               rgba(255, 99, 71, .25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+
+
+.logo{
+  position: absolute;
+  left:1%;
+  top: 2%;
+  font-size: 1.5rem; /* Increased font size for the title */
+  color: #333333; /* Dark gray for the text */
+  background-color: rgb(255,255,255); /* Muted purple background */
+  font-family: 'Georgia', serif; /* Elegant serif font */
+  font-weight: bold; /* Bold weight for the title */
+  margin: 0; /* Remove default margin */
+  text-transform: uppercase; /* Transform text to uppercase for classiness */
+  letter-spacing: 1px; /* Increased spacing between letters */
+  width: 7.5%; /* Set a fixed width for the logo container */
+  white-space: normal; /* Allow the text to wrap */
+  padding:4px;
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.logo:hover {
+  background-color: rgb(240,240,240); /* Darker purple on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+.logo i {
+  font-size: 28px; /* Larger icon size for visibility */
+  color: white; /* Icon color */
+}
