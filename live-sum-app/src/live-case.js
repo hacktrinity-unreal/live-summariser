@@ -43,7 +43,6 @@ function LiveCase() {
   const [searchParams] = useSearchParams();
 
   const title = searchParams.get("title");
-  const description = searchParams.get("description");
 
   React.useEffect(() => {
     if (!title) {
@@ -87,7 +86,7 @@ function LiveCase() {
 
   return (
     <div>
-      <CaseTitles title={title} description={description} />
+      <CaseTitles title={title} />
       <KeyMomentContainer summaries={summaries} />
       <AIExpert analyses={analyses} />
     </div>
@@ -106,7 +105,7 @@ async function fetchOdds() {
   }
 }
 
-function CaseTitles({ title, description }) {
+function CaseTitles({ title }) {
   const [guiltyOdds, setGuiltyOdds] = useState(0.0);
   const [notGuiltyOdds, setNotGuiltyOdds] = useState(0.0);
 
