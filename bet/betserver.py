@@ -13,10 +13,10 @@ CORS_HEADERS = {
 
 async def handle_add_bet(request):
     data = await request.json()
-    data = json.loads(data)
+    
     bet = Bet(PATH)
 
-    print("data")
+    print(bet.get_odds())
 
     stake = data["stake"] if "stake" in data else 1
     position = data["position"] if "position" in data else "guilty"
@@ -30,11 +30,11 @@ async def handle_add_bet(request):
 async def handle_get_returns(request):
     bet = Bet(PATH)
 
-    prob2odds = lambda x: x / (1 - x)
+    prob2odds = lambda x: x / (1 - x    )
     response = json.dumps(
         {
-            "guilty": prob2odds(bet.get_odds()[0]),
-            "not_guilty": prob2odds(bet.get_odds()[1]),
+            "guilty": round(prob2odds(bet.get_odds()[0]), 4),
+            "not_guilty": round(prob2odds(bet.get_odds()[1]), 4),
         }
     )
     return web.json_response(body=response, headers=CORS_HEADERS)

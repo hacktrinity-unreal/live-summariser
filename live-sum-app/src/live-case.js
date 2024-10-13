@@ -102,6 +102,24 @@ function CaseTitles({ title, description }) {
   const [guiltyOdds, setGuiltyOdds] = useState(0.0);
   const [notGuiltyOdds, setNotGuiltyOdds] = useState(0.0);
 
+  async function SubmitBet(betPosition){
+    console.log("posting");
+  
+    await fetch("http://0.0.0.0:8080/bet", {mode:"cors",method: "POST", body:JSON.stringify({
+        stake:50,
+        position:betPosition
+      })
+    });
+
+    try {
+      const { guiltyOdds, notGuiltyOdds } = await fetchOdds();
+      setGuiltyOdds(guiltyOdds);
+      setNotGuiltyOdds(notGuiltyOdds);
+    } catch (error) {
+      console.error("Error fetching odds:", error);
+    }
+  };
+
   useEffect(() => {
     const getOdds = async () => {
       try {
@@ -125,25 +143,16 @@ function CaseTitles({ title, description }) {
         </div>
       </div>
       <div className="double-buttons">
-        <button className="green-button">
+        <button className="green-button" onClick={() => SubmitBet("not_guilty") }>
           Not Guilty<br></br> Odds: {notGuiltyOdds}
         </button>
-        <button className="red-button">
+        <button className="red-button" onClick={() => SubmitBet("guilty")}>
           Guilty<br></br> Odds: {guiltyOdds}
         </button>
       </div>
     </>
   );
 }
-
-function SubmitBet(betPosition){
-  console.log("posting")
-  fetch("http://0.0.0.0/bet:8080", {mode:"cors",method: "POST", body:JSON.stringify({
-    stake:50,
-    position:betPosition
-  })
-})
-};
 
 function KeyMoment({ text, timestamp }) {
   return (
